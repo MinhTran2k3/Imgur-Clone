@@ -5,7 +5,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// UserRoute sets up the user-related routes
 func UserRoute(router *gin.Engine) {
 	router.GET("/", controller.UserController)
 }
