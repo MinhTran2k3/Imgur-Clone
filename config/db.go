@@ -1,19 +1,15 @@
 package config
 
 import (
-	"github.com/TranMinh2k3/gin-gorm-rest/models"
-	"gorm.io/driver/postgres"
+	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )
 
-var DB *gorm.DB
-
-func Connect() {
-	db, err := gorm.Open(postgres.Open("postgres://postgres:postgres@localhost:5432/postgress"), &gorm.Config{})
-
+// InitDB initializes the database connection
+func InitDB() (*gorm.DB, error) {
+	db, err := gorm.Open(sqlite.Open("imgur_clone.db"), &gorm.Config{})
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
-	db.AutoMigrate(&models.User{})
-	DB = db
+	return db, nil
 }

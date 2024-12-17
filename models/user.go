@@ -1,11 +1,13 @@
 package models
 
-import "gorm.io/gorm"
+import (
+	"time"
+)
 
+// User represents a user of the application
 type User struct {
-	gorm.Model
-	Id       int64  `json:"id" gorm:"primary_key"`
-	Name     string `json:"name"`
-	Email    string `json:"email"`
-	Password string `json:"password"`
+	ID        uint      `json:"id" gorm:"primaryKey"`
+	Username  string    `json:"username" gorm:"unique;not null"`
+	Password  string    `json:"password"`
+	CreatedAt time.Time `json:"created_at"`
 }

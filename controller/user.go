@@ -1,8 +1,13 @@
 package controller
 
-import "github.com/gin-gonic/gin"
+import (
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+)
 
 func UserController(c *gin.Context) {
-	c.String(200, "Hello World!")
-
+	c.JSON(http.StatusOK, gin.H{
+		"message": "User route is working",
+	})
 }

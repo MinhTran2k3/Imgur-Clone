@@ -1,12 +1,21 @@
 package main
 
 import (
-	"github.com/TranMinh2k3/gin-gorm-rest/routes"
+	"imgur-clone/handlers"
+
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	router := gin.New()
-	routes.UserRoute(router)
-	router.Run(":8080")
+	r := gin.Default()
+
+	r.POST("/register", handlers.Register)
+	r.POST("/login", handlers.Login)
+
+	r.POST("/upload", handlers.UploadImage)
+	r.GET("/image/:id", handlers.GetImage)
+
+	if err := r.Run(":8080"); err != nil {
+		panic("Failed to start server: " + err.Error())
+	}
 }
