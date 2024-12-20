@@ -9,7 +9,7 @@ import (
 func UploadImage(c *gin.Context) {
 
 	c.JSON(http.StatusOK, gin.H{
-		"message": "Image uploaded successfully",
+		"message": "Bilder wurde erfolgreich hochgeladen",
 	})
 }
 
@@ -18,6 +18,6 @@ func GetImage(c *gin.Context) {
 	id := c.Param("id")
 	c.JSON(http.StatusOK, gin.H{
 		"id":      id,
-		"message": "Image retrieved successfully",
+		"message": "Bilder wurde erfolgreich abgerufen",
 	})
 }

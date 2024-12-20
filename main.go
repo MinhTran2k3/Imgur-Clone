@@ -2,7 +2,6 @@ package main
 
 import (
 	"github.com/MinhTran2k3/Imgur-clone/handlers"
-
 	"github.com/gin-gonic/gin"
 )
 

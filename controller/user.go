@@ -8,6 +8,6 @@ import (
 
 func UserController(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
-		"message": "User route is working",
+		"message": "Benutzerroute funktioniert.",
 	})
 }

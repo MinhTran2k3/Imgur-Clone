@@ -1,7 +1,8 @@
 package routes
 
 import (
-	"github.com/TranMinh2k3/gin-gorm-rest/controller"
+	"github.com/MinhTran2k3/Imgur-clone/controller"
+
 	"github.com/gin-gonic/gin"
 )
 
