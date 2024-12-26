@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imgur Clone</title>
+</head>
+<body>
+    <h1>Willkommen zu meinem Imgur Clone!</h1>
+    <form action="/upload-image" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <button type="submit">Hochladen</button>
+    </form>
+    <h2>Hochgeladene Bilder</h2>
+    <div>
+        {{range .images}}
+        <div>
+            <img src="/images/{{.}}" alt="Bild" style="max-width: 300px;">
+            <form action="/delete-image" method="POST" style="display: inline;">
+                <input type="hidden" name="filename" value="{{.}}">
+                <button type="submit">Löschen</button>
+            </form>
+        </div>
+        <hr>
+        {{end}}
+    </div>
+</body>
+</html>
